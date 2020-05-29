@@ -1,0 +1,44 @@
+{
+  "name": "@payburner/paybutton-js-react",
+  "version": "0.0.1",
+  "description": "Paybutton React Component",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/payburner/paybutton-js-react.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Payburner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/payburner/paybutton-js-react/issues"
+  },
+  "homepage": "https://github.com/payburner/paybutton-js-react#readme",
+  "dependencies": {
+    "@payburner/paybutton.js": "0.0.5"
+  },
+  "peerDependencies": {
+    "react": ">=15.0.1",
+    "react-dom": ">=15.0.1"
+  },
+  "devDependencies": {
+    "postcss-loader": "^3.0.0",
+    "stylus-loader": "^3.0.2",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}

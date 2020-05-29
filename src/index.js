@@ -1,26 +1,31 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 class PayButton extends React.Component {
 
     constructor(props) {
         super(props);
-        this.elementRef = useRef(null);
+        this.myRef = React.createRef();
     }
 
 
 
     componentDidMount() {
-
-        this.elementRef.addEventListener((e)=>{
-            alert(e.detail);
+        this.myRef.current.addEventListener('settled', event => {
+            if (typeof this.props.onSettled === 'function') {
+                this.props.onSettled(event.detail);
+            }
         });
     }
 
 
     render() {
-
-        return (<React.Fragment>
-            <pay-button buttonid={this.props.buttonid} ref={this.elementRef}/>
-        </React.Fragment>);
+        if (typeof this.props.price !== 'undefined') {
+            return (
+                <pay-button ref={this.myRef} buttonid={this.props.buttonid} price={this.props.price} /> );
+        }
+        else {
+            return (
+                <pay-button ref={this.myRef} buttonid={this.props.buttonid} /> );
+        }
     }
 }
 
